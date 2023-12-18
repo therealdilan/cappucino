@@ -1,6 +1,6 @@
 FROM golang:1.16-alpine
 
-WORKDIR /cappucino
+WORKDIR /cappuccino
 
 
 COPY go.mod .
@@ -12,5 +12,5 @@ RUN go build -o bin .
 
 EXPOSE 6969
 
-ENTRYPOINT [ "/cappucino/bin" ]
+ENTRYPOINT [ "/cappuccino/bin" ]
 

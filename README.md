@@ -1,7 +1,7 @@
-# Cappucino
+# Cappuccino
  
 
- Cappucino is a completely useless, live web render, letting you write HTML, CSS and JavaScript and watch it render in (almost) realtime. 
+ Cappuccino is a completely useless, live web render, letting you write HTML, CSS and JavaScript and watch it render in (almost) realtime. 
 
  I plan to add more features soon to actually make it seem like a worthwhile project, such as local savings, providing CSS styles, downloading as HTML files etc. 
 
@@ -14,5 +14,4 @@
  - Tailwind support
  - Turn off Javascript 
  - Save between sessions
-
-
+ - Rename everything to 'Cappuccino' (I forgot the extra 'c')

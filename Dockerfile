@@ -1,12 +1,12 @@
 FROM golang:1.16-alpine
 
-WORKDIR /app
+WORKDIR /cappucino
 
 
 COPY go.mod .
 COPY main.go .
-COPY app/index.html .
-COPY app/static ./static
+COPY app/index.html app/index.html
+COPY app/static app/static
 
 RUN go build -o bin . 
 

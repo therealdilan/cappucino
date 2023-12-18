@@ -5,28 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="/static/hmtx.js" type="text/javascript"></script>
+    <script src="/static/htmx.js" type="text/javascript"></script>
+    <script src="/static/app.js" type="text/javascript"></script>
     <link href="/static/styles.css" rel="stylesheet">
     <title>Cappucino</title>
     
     <style>
-      /* FONT INCLUDE HERE */
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
     </style>
 
 </head>
 <body>
   <div class="header">
     <h1>Cappuccino</h1>
+    <div class="header__buttons">
+      <input type="color" value="#ffffff" id="colorPicker"></input>
+      <button id="resetCode">Reset Code</button>
+    </div> 
   </div>
   <div class="app">
     <div class="app__editor">
-      <textarea 
-        hx-post="/api/render"
-        placeholder="Start coding here...">
-      </textarea>
+      <textarea
+        name="code"
+        id="code"
+        type="text"
+        hx-post="/render"
+        hx-trigger="input changed delay:25ms"
+        hx-target="#render"
+        placeholder="Start coding here..."></textarea>
     </div>
-    <div class="app__preview">
-      <h1>Preview</h1>
+    <div class="app__preview" id="preview">
+      <div id="render"></div>
     </div>
   </div>
 </body>

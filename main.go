@@ -2,6 +2,8 @@ package main
 
 import (
   //"fmt"
+  "log"
+  "os"
   "net/http"
   "html/template"
   //"github.com/microcosm-cc/bluemonday"
@@ -13,7 +15,13 @@ func main() {
   http.HandleFunc("/", handleApp)
   http.HandleFunc("/render", renderHTML)
   // Start HTTP server
-  http.ListenAndServe(":6969", nil)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "6969"
+	}
+
+	log.Println("listening on", port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 func handleApp(w http.ResponseWriter, r *http.Request) {

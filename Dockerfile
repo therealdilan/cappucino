@@ -5,8 +5,8 @@ WORKDIR /app
 
 COPY go.mod .
 COPY main.go .
-COPY index.html .
-COPY static ./static
+COPY app/index.html .
+COPY app/static ./static
 
 RUN go build -o bin . 
 
